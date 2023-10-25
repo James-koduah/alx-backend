@@ -9,8 +9,9 @@ class LFUCache(BaseCaching):
     """A Caching class using the LRU method
     if there is more that one item to remove we use the LRU method
     """
-    LRU = []
-    frequency = {}
+
+    LRU = []  # The latest key to be accessed is at the front of the queue
+    frequency = {}  # Stores the frequency each key has been visited
 
     def __init__(self):
         super().__init__()
@@ -19,8 +20,13 @@ class LFUCache(BaseCaching):
         """Add an item to the cache"""
         cache_len = len(self.cache_data)
         if cache_len >= self.MAX_ITEMS and key not in self.cache_data:
+            # list of all frequencies
             freq = [v for k, v in self.frequency.items()]
             least_freq = min(freq)
+            """As we have lowest frequeny number
+            we search through the LRU  to find a match for it and return the
+            first match of the frequencies
+            """
             delete_key = [
                     x for x in self.LRU if self.frequency[x] == least_freq][0]
             self.LRU.remove(delete_key)
