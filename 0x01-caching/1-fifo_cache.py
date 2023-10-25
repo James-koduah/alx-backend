@@ -26,4 +26,5 @@ class FIFOCache(BaseCaching):
             self.FIFO.append(key)
 
     def get(self, key):
+        """Get value from cache"""
         return self.cache_data.get(key)
