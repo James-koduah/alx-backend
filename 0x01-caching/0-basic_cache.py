@@ -11,10 +11,12 @@ class BasicCache(BaseCaching):
         super(BasicCache, self).__init__()
 
     def put(self, key, item):
+        """put an item into the cache"""
         if key is not None and item is not None:
             self.cache_data[key] = item
 
     def get(self, key):
+        """get an item from cache"""
         if key is None:
             return None
-        self.cache_data.get(key)
+        return self.cache_data.get(key)
