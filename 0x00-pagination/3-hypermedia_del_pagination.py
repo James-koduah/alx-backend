@@ -40,6 +40,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """Get page results by indexed sorting"""
         data = self.indexed_dataset()
         assert index >= 0 and index < len(data)
         assert type(index) == int and type(page_size) == int
