@@ -2,7 +2,7 @@
 """
 basic flask app
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
@@ -17,6 +17,15 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
+app.config.from_object(Config)
+
+
+@app.route("/")
+def hello():
+    """A route that returns a welcome string"""
+    return render_template('4-index.html')
+
+
 @babel.localeselector
 def get_locale():
     """Select language locale"""
@@ -24,15 +33,6 @@ def get_locale():
     if language in app.config['LANGUAGES']:
         return language
     return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-app.config.from_object(Config)
-
-
-@app.route("/", strict_slashes=False)
-def hello():
-    """A route that returns a welcome string"""
-    return render_template('4-index.html')
 
 
 if __name__ == '__main__':
