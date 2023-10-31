@@ -23,7 +23,7 @@ app.config.from_object(Config)
 @app.route("/", strict_slashes=False)
 def hello():
     """A route that returns a welcome string"""
-    return render_template('0-index.html')
+    return render_template('1-index.html')
 
 
 if __name__ == '__main__':
