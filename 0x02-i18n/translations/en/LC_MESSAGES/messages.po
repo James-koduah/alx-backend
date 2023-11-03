@@ -6,18 +6,6 @@
 msgid ""
 msgstr ""
 
-msgid "home_title"
-msgstr "Welcome to Holberton"
-
-msgid "home_header"
-msgstr "Hello world!"
-
-msgid "logged_in_as"
-msgstr "You are logged in as %(username)s."
-
-msgid "not_logged_in"
-msgstr "You are not logged in."
-
 
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
@@ -31,3 +19,21 @@ msgstr "You are not logged in."
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
+
+msgid "home_title"
+msgstr "Welcome to Holberton"
+
+msgid "home_header"
+msgstr "Hello world!"
+
+msgid "logged_in_as"
+msgstr "You are logged in as %(username)s."
+
+msgid "not_logged_in"
+msgstr "You are not logged in."
+
+msgid "current_time_is"
+msgstr "The current time is %(current_time)s."
+
+
+
