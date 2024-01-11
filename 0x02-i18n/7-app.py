@@ -44,7 +44,7 @@ def get_locale():
     if g.user:
         lan = g.user.get('locale')
         if lan is not None and lan in app.config['LANGUAGES']:
-            return lan 
+            return lan
 
     lang = request.headers.get('locale')
     if lang in app.config['LANGUAGES']:
@@ -64,6 +64,7 @@ def get_user():
             return None
     return None
 
+
 @babel.timezoneselector
 def get_timezone():
     """Get the timezone"""
@@ -82,11 +83,11 @@ def get_timezone():
 
     return app.config['BABEL_DEFAULT_TIMEZONE']
 
+
 @app.before_request
 def before():
     """Executed before all other functions"""
     g.user = get_user()
-
 
 
 if __name__ == '__main__':
